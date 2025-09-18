@@ -64,11 +64,11 @@ const Pricing = () => {
               <div className="space-y-4 text-xl">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-border/50 pb-2">
                   <span className="text-foreground font-bold">Alkeiskurssi (sis. maakoulutuksen, treenit, ekan hypyn)</span>
-                  <span className="text-muted-foreground font-semibold">390€</span>
+                  <span className="text-muted-foreground font-semibold text-right sm:text-left">390€</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-border/50 pb-2">
                   <span className="text-foreground font-bold">Alkeiskurssi opiskilejoille ja res.</span>
-                  <span className="text-muted-foreground font-semibold">320€</span>
+                  <span className="text-muted-foreground font-semibold text-right sm:text-left">320€</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-border/50 pb-2">
                   <span className="text-foreground font-bold">Oppilashyppy</span>
