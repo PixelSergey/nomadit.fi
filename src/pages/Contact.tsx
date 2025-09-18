@@ -57,7 +57,7 @@ const Contact = () => {
                   <AvatarFallback className="bg-darker-surface text-neon-green text-2xl">H</AvatarFallback>
                 </Avatar>
                 <h3 className="text-3xl font-bold text-foreground mb-2">Hallitus</h3>
-                <p className="text-lg text-muted-foreground mb-3">säätäminen</p>
+                <p className="text-lg text-muted-foreground mb-3">yleiset yhteydenotot sekä säätäminen</p>
               </CardHeader>
               <CardContent className="text-center pt-0">
                 <a 
