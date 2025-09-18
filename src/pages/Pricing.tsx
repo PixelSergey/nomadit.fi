@@ -53,7 +53,7 @@ const Pricing = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-foreground font-bold">Dyaaminen toiminta</span>
-                  <span className="text-muted-foreground font-semibold">3.9€ minuutissa</span>
+                  <span className="text-muted-foreground font-semibold text-right sm:text-left">3.9€ minuutissa</span>
                 </div>
               </div>
             </section>
