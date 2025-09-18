@@ -11,7 +11,7 @@ const contacts = [
   {
     id: "lasse",
     name: "Lasse",
-    role: "Puheenjohtaja ja mesu",
+    role: "puheenjohtaja ja mesu",
     email: "pj@nomadit.fi",
     image: lasseImage,
   },
