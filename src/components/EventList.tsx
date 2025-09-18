@@ -3,15 +3,13 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlternativeButton } from "@/components/AlternativeButton";
 import { Calendar, Clock, MapPin } from "lucide-react";
-import { format } from "date-fns";
 
 interface Event {
   id: string;
   title: string;
   description: string | null;
   event_date: string;
-  start_time: string | null;
-  end_time: string | null;
+  event_time: string | null;
   location: string | null;
 }
 
@@ -37,15 +35,6 @@ const EventList = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const formatDate = (dateString: string) => {
-    return format(new Date(dateString), 'dd.MM.yyyy');
-  };
-
-  const formatTime = (timeString: string | null) => {
-    if (!timeString) return null;
-    return timeString.slice(0, 5); // Format HH:MM
   };
 
   if (loading) {
@@ -96,16 +85,13 @@ const EventList = () => {
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-lg text-foreground">
                   <Calendar className="h-5 w-5 text-neon-green" />
-                  <span className="font-semibold">{formatDate(event.event_date)}</span>
+                  <span className="font-semibold">{event.event_date}</span>
                 </div>
                 
-                {event.start_time && (
+                {event.event_time && (
                   <div className="flex items-center gap-3 text-lg text-muted-foreground">
                     <Clock className="h-5 w-5 text-neon-green" />
-                    <span>
-                      {formatTime(event.start_time)}
-                      {event.end_time && ` - ${formatTime(event.end_time)}`}
-                    </span>
+                    <span>{event.event_time}</span>
                   </div>
                 )}
                 

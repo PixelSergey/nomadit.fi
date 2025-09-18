@@ -19,11 +19,10 @@ export type Database = {
           created_at: string
           created_by: string | null
           description: string | null
-          end_time: string | null
           event_date: string
+          event_time: string | null
           id: string
           location: string | null
-          start_time: string | null
           title: string
           updated_at: string
         }
@@ -31,11 +30,10 @@ export type Database = {
           created_at?: string
           created_by?: string | null
           description?: string | null
-          end_time?: string | null
           event_date: string
+          event_time?: string | null
           id?: string
           location?: string | null
-          start_time?: string | null
           title: string
           updated_at?: string
         }
@@ -43,11 +41,10 @@ export type Database = {
           created_at?: string
           created_by?: string | null
           description?: string | null
-          end_time?: string | null
           event_date?: string
+          event_time?: string | null
           id?: string
           location?: string | null
-          start_time?: string | null
           title?: string
           updated_at?: string
         }
