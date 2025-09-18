@@ -19,12 +19,12 @@ const Courses = () => {
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl font-bold text-foreground text-center">
-                  Laskuvarjohyppäämisen alkeiskurssit
+                  Laskuvarjohyppäämisen alkeiskurssi
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center space-y-6">
                 <p className="text-lg text-muted-foreground">
-                  Seuraava alkeiskurssi: 12.10.2025
+                  Seuraava alkeiskurssi: ??.??.????
                 </p>
                 <AlternativeButton variant="hero" size="lg">
                   Ilmoittaudu
@@ -45,7 +45,7 @@ const Courses = () => {
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 rounded-lg bg-background/30 border border-border/30">
                     <div>
                       <h3 className="text-lg font-semibold text-foreground">Yöhyppykurssi</h3>
-                      <p className="text-muted-foreground">seuraava yökurssi 14.10.2025</p>
+                      <p className="text-muted-foreground">seuraava yökurssi ??.??.????</p>
                     </div>
                     <AlternativeButton variant="hero" size="default">
                       Ilmoittaudu
@@ -56,7 +56,7 @@ const Courses = () => {
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 rounded-lg bg-background/30 border border-border/30">
                     <div>
                       <h3 className="text-lg font-semibold text-foreground">Advanced Navigator Handling -kurssi</h3>
-                      <p className="text-muted-foreground">seuraava navikurssi 21.10.2025</p>
+                      <p className="text-muted-foreground">seuraava navikurssi ??.??.????</p>
                     </div>
                     <AlternativeButton variant="hero" size="default">
                       Ilmoittaudu
@@ -67,7 +67,7 @@ const Courses = () => {
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 rounded-lg bg-background/30 border border-border/30">
                     <div>
                       <h3 className="text-lg font-semibold text-foreground">Offarikurssi</h3>
-                      <p className="text-muted-foreground">seuraava offarikurssi 25.11.2025</p>
+                      <p className="text-muted-foreground">seuraava offarikurssi ??.??.????</p>
                     </div>
                     <AlternativeButton variant="hero" size="default">
                       Ilmoittaudu
