@@ -67,7 +67,7 @@ const Pricing = () => {
                   <span className="text-muted-foreground font-semibold">390€</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-border/50 pb-2">
-                  <span className="text-foreground">Alkeiskurssi opiskelejoille ja res.</span>
+                  <span className="text-foreground">Alkeiskurssi opiskilejoille ja res.</span>
                   <span className="text-muted-foreground font-semibold">320€</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-border/50 pb-2">
