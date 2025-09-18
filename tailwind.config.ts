@@ -47,6 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        neon: {
+          green: "hsl(var(--neon-green))",
+          red: "hsl(var(--neon-red))",
+          blue: "hsl(var(--neon-blue))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +62,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        'orbitron': ['Orbitron', 'monospace'],
+        'rajdhani': ['Rajdhani', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +89,46 @@ export default {
             height: "0",
           },
         },
+        "glitch": {
+          "0%, 100%": {
+            transform: "translate(0)",
+          },
+          "20%": {
+            transform: "translate(-2px, 2px)",
+          },
+          "40%": {
+            transform: "translate(-2px, -2px)",
+          },
+          "60%": {
+            transform: "translate(2px, 2px)",
+          },
+          "80%": {
+            transform: "translate(2px, -2px)",
+          },
+        },
+        "neon-pulse": {
+          "0%": {
+            boxShadow: "0 0 5px hsl(var(--neon-green)), 0 0 10px hsl(var(--neon-green)), 0 0 15px hsl(var(--neon-green))",
+          },
+          "100%": {
+            boxShadow: "0 0 10px hsl(var(--neon-green)), 0 0 20px hsl(var(--neon-green)), 0 0 30px hsl(var(--neon-green))",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "glitch": "glitch 2s infinite",
+        "neon-pulse": "neon-pulse 2s ease-in-out infinite alternate",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },
