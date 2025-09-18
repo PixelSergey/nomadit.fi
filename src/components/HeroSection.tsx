@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="space-y-8">
           {/* Main title with glitch effect */}
-          <h1 className="text-6xl md:text-8xl font-bold text-foreground relative">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground relative">
             <span className="relative inline-block animate-glitch">
               Full Stack Nomads
             </span>
@@ -27,30 +27,24 @@ const HeroSection = () => {
           </h1>
           
           {/* Subtitle */}
-          <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium tracking-wide">
+          <h2 className="text-xl md:text-2xl text-muted-foreground font-medium tracking-wide">
             Se parempi hyppykerho
           </h2>
           
           {/* Skull image with effects */}
-          <div className="my-12 relative">
+          <div className="my-8 relative">
             <div className="relative inline-block animate-float">
               <img 
                 src={skullPropeller} 
                 alt="Laughing skull with propeller falling from sky" 
-                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
+                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg" />
-            </div>
-            
-            {/* Scroll prompt anchored to image */}
-            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 text-muted-foreground animate-float flex flex-col items-center">
-              <div className="text-4xl">↓</div>
-              <div className="text-sm mt-2">Scroll for more</div>
             </div>
           </div>
           
           {/* Call to action buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <AlternativeButton variant="hero" size="lg" className="text-lg px-8 py-4">
               Liity mukaan
             </AlternativeButton>
@@ -60,12 +54,13 @@ const HeroSection = () => {
           </div>
 
           {/* Perustuslaki section */}
-          <div className="mt-20 p-8 border border-neon-red/30 rounded-lg bg-darker-surface/50 backdrop-blur-sm w-full max-w-4xl mx-auto">
+          <div className="mt-16 p-8 border border-neon-red/30 rounded-lg bg-darker-surface/50 backdrop-blur-sm w-full max-w-4xl mx-auto">
             <h3 className="text-3xl md:text-4xl font-bold text-neon-red mb-6 text-center animate-glitch">
               Perustuslaki
             </h3>
             <p className="text-lg md:text-xl text-muted-foreground text-center leading-relaxed">
-              Kaikki mikä edistää hyppäämistä vaarantamatta muiden turvallisuutta on hyvästä, ja kaikki muu saatanasta
+              Kaikki mikä edistää hyppäämistä vaarantamatta muiden turvallisuutta on hyvästä,<br />
+              ja kaikki muu saatanasta
             </p>
           </div>
         </div>
