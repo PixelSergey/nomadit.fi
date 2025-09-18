@@ -8,7 +8,7 @@ import skullSkydiver6 from "@/assets/skulls/skull-skydiver-6.jpg";
 import skullSkydiver7 from "@/assets/skulls/skull-skydiver-7.jpg";
 import skullSkydiver8 from "@/assets/skulls/skull-skydiver-8.jpg";
 import skullSkydiver9 from "@/assets/skulls/skull-skydiver-9.jpg";
-import skullSkydiver10 from "@/assets/skull-skydiver-10.jpg";
+import skullSkydiver10 from "@/assets/skulls/skull-skydiver-10.jpg";
 import { AlternativeButton } from "./AlternativeButton";
 import { useState, useEffect } from "react";
 
