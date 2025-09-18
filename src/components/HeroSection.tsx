@@ -1,7 +1,39 @@
 import skullPropeller from "@/assets/skull-propeller.jpg";
+import skullSkydiver1 from "@/assets/skull-skydiver-1.jpg";
+import skullSkydiver2 from "@/assets/skull-skydiver-2.jpg";
+import skullSkydiver3 from "@/assets/skull-skydiver-3.jpg";
+import skullSkydiver4 from "@/assets/skull-skydiver-4.jpg";
+import skullSkydiver5 from "@/assets/skull-skydiver-5.jpg";
+import skullSkydiver6 from "@/assets/skull-skydiver-6.jpg";
+import skullSkydiver7 from "@/assets/skull-skydiver-7.jpg";
+import skullSkydiver8 from "@/assets/skull-skydiver-8.jpg";
+import skullSkydiver9 from "@/assets/skull-skydiver-9.jpg";
+import skullSkydiver10 from "@/assets/skull-skydiver-10.jpg";
 import { AlternativeButton } from "./AlternativeButton";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
+  const skullImages = [
+    skullPropeller,
+    skullSkydiver1,
+    skullSkydiver2,
+    skullSkydiver3,
+    skullSkydiver4,
+    skullSkydiver5,
+    skullSkydiver6,
+    skullSkydiver7,
+    skullSkydiver8,
+    skullSkydiver9,
+    skullSkydiver10,
+  ];
+
+  const [randomSkull, setRandomSkull] = useState<string>("");
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * skullImages.length);
+    setRandomSkull(skullImages[randomIndex]);
+  }, []);
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-darker-surface to-background pt-20 pb-20">
       {/* Animated background elements */}
@@ -35,8 +67,8 @@ const HeroSection = () => {
           <div className="my-8 relative">
             <div className="relative inline-block animate-float">
               <img 
-                src={skullPropeller} 
-                alt="Laughing skull with propeller falling from sky" 
+                src={randomSkull || skullPropeller} 
+                alt="Skull skydiver with propeller falling from sky"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg" />
