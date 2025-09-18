@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlternativeButton } from "@/components/AlternativeButton";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { format } from "date-fns";
 
@@ -13,7 +13,6 @@ interface Event {
   start_time: string | null;
   end_time: string | null;
   location: string | null;
-  is_public: boolean;
 }
 
 const EventList = () => {
@@ -29,7 +28,6 @@ const EventList = () => {
       const { data, error } = await supabase
         .from('events')
         .select('*')
-        .eq('is_public', true)
         .order('event_date', { ascending: true });
 
       if (error) throw error;
@@ -52,15 +50,15 @@ const EventList = () => {
 
   if (loading) {
     return (
-      <div className="space-y-4">
+      <div className="space-y-5">
         {[1, 2, 3].map((i) => (
-          <Card key={i} className="animate-pulse">
+          <Card key={i} className="bg-card/50 backdrop-blur-sm border-border/50 animate-pulse">
             <CardHeader>
-              <div className="h-4 bg-muted rounded w-3/4"></div>
-              <div className="h-3 bg-muted rounded w-1/2"></div>
+              <div className="h-6 bg-muted rounded w-3/4 mx-auto"></div>
             </CardHeader>
             <CardContent>
-              <div className="h-3 bg-muted rounded w-full"></div>
+              <div className="h-4 bg-muted rounded w-full mb-4"></div>
+              <div className="h-10 bg-muted rounded w-32 mx-auto"></div>
             </CardContent>
           </Card>
         ))}
@@ -70,52 +68,58 @@ const EventList = () => {
 
   if (events.length === 0) {
     return (
-      <Card>
+      <Card className="bg-card/50 backdrop-blur-sm border-border/50">
         <CardContent className="pt-6 text-center">
-          <p className="text-muted-foreground">Ei tulevia tapahtumia.</p>
+          <p className="text-lg text-muted-foreground">Ei tulevia tapahtumia.</p>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {events.map((event) => (
-        <Card key={event.id} className="hover:shadow-lg transition-shadow">
+        <Card key={event.id} className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/60 transition-colors">
           <CardHeader>
-            <div className="flex justify-between items-start">
-              <div>
-                <CardTitle className="text-xl">{event.title}</CardTitle>
-                {event.description && (
-                  <CardDescription className="mt-2">{event.description}</CardDescription>
+            <CardTitle className="text-2xl md:text-3xl font-bold text-foreground text-center">
+              {event.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {event.description && (
+              <p className="text-lg text-muted-foreground text-center">
+                {event.description}
+              </p>
+            )}
+            
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 rounded-lg bg-background/30 border border-border/30">
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 text-lg text-foreground">
+                  <Calendar className="h-5 w-5 text-neon-green" />
+                  <span className="font-semibold">{formatDate(event.event_date)}</span>
+                </div>
+                
+                {event.start_time && (
+                  <div className="flex items-center gap-3 text-lg text-muted-foreground">
+                    <Clock className="h-5 w-5 text-neon-green" />
+                    <span>
+                      {formatTime(event.start_time)}
+                      {event.end_time && ` - ${formatTime(event.end_time)}`}
+                    </span>
+                  </div>
+                )}
+                
+                {event.location && (
+                  <div className="flex items-center gap-3 text-lg text-muted-foreground">
+                    <MapPin className="h-5 w-5 text-neon-green" />
+                    <span>{event.location}</span>
+                  </div>
                 )}
               </div>
-              <Badge variant="secondary" className="ml-2">
-                Julkinen
-              </Badge>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <span>{formatDate(event.event_date)}</span>
-              </div>
-              {event.start_time && (
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
-                  <span>
-                    {formatTime(event.start_time)}
-                    {event.end_time && ` - ${formatTime(event.end_time)}`}
-                  </span>
-                </div>
-              )}
-              {event.location && (
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>{event.location}</span>
-                </div>
-              )}
+              
+              <AlternativeButton variant="hero" size="default">
+                Ilmoittaudu
+              </AlternativeButton>
             </div>
           </CardContent>
         </Card>

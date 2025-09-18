@@ -22,7 +22,6 @@ export type Database = {
           end_time: string | null
           event_date: string
           id: string
-          is_public: boolean
           location: string | null
           start_time: string | null
           title: string
@@ -35,7 +34,6 @@ export type Database = {
           end_time?: string | null
           event_date: string
           id?: string
-          is_public?: boolean
           location?: string | null
           start_time?: string | null
           title: string
@@ -48,7 +46,6 @@ export type Database = {
           end_time?: string | null
           event_date?: string
           id?: string
-          is_public?: boolean
           location?: string | null
           start_time?: string | null
           title?: string
