@@ -18,7 +18,7 @@ const Courses = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-4xl mx-auto space-y-5">
             {/* Alkeiskurssit Section */}
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
               <CardHeader>
