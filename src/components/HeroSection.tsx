@@ -3,7 +3,7 @@ import { AlternativeButton } from "./AlternativeButton";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-darker-surface to-background pt-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-darker-surface to-background pt-20 pb-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-neon-green/10 rounded-full blur-3xl animate-float" />
@@ -41,6 +41,12 @@ const HeroSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg" />
             </div>
+            
+            {/* Scroll prompt anchored to image */}
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 text-muted-foreground animate-float flex flex-col items-center">
+              <div className="text-4xl">↓</div>
+              <div className="text-sm mt-2">Scroll for more</div>
+            </div>
           </div>
           
           {/* Call to action buttons */}
@@ -54,21 +60,15 @@ const HeroSection = () => {
           </div>
 
           {/* Perustuslaki section */}
-          <div className="mt-16 p-8 border border-neon-red/30 rounded-lg bg-darker-surface/50 backdrop-blur-sm">
+          <div className="mt-20 p-8 border border-neon-red/30 rounded-lg bg-darker-surface/50 backdrop-blur-sm w-full max-w-4xl mx-auto">
             <h3 className="text-3xl md:text-4xl font-bold text-neon-red mb-6 text-center animate-glitch">
               Perustuslaki
             </h3>
-            <p className="text-lg md:text-xl text-muted-foreground text-center leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground text-center leading-relaxed">
               Kaikki mikä edistää hyppäämistä vaarantamatta muiden turvallisuutta on hyvästä, ja kaikki muu saatanasta
             </p>
           </div>
         </div>
-      </div>
-      
-      {/* Additional decorative elements */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-muted-foreground animate-float">
-        <div className="text-4xl">↓</div>
-        <div className="text-sm mt-2">Scroll for more</div>
       </div>
     </section>
   );
