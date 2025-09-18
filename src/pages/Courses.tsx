@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlternativeButton } from "@/components/AlternativeButton";
+import { Link } from "react-router-dom";
 
 const Courses = () => {
   return (
@@ -12,6 +13,9 @@ const Courses = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-neon-green animate-glitch mb-8">
               Kurssit
             </h1>
+            <p className="text-lg text-muted-foreground">
+              Kaikki kurssiajankohdat voidaan sopia myös erikseen, <Link to="/contact" className="text-neon-green hover:text-neon-green/80 underline transition-colors">ota yhteyttä hallitukseen</Link>
+            </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-12">
