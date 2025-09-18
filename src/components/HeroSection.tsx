@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="space-y-8">
           {/* Main title with glitch effect */}
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground relative">
+          <h1 className="text-6xl md:text-8xl font-bold text-foreground relative">
             <span className="relative inline-block animate-glitch">
               Full Stack Nomads
             </span>
