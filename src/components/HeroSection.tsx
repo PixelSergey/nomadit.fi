@@ -46,10 +46,10 @@ const HeroSection = () => {
           {/* Call to action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <AlternativeButton variant="hero" size="lg" className="text-lg px-8 py-4">
-              Liity mukaan
+              Laskuvarjohyppykurssit
             </AlternativeButton>
             <AlternativeButton variant="skull" size="lg" className="text-lg px-8 py-4">
-              Katso kurssit
+              Join the dark side
             </AlternativeButton>
           </div>
 
