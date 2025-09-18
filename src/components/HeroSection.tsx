@@ -3,7 +3,7 @@ import { AlternativeButton } from "./AlternativeButton";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-darker-surface to-background">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-darker-surface to-background pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-neon-green/10 rounded-full blur-3xl animate-float" />
@@ -44,13 +44,23 @@ const HeroSection = () => {
           </div>
           
           {/* Call to action buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <AlternativeButton variant="hero" size="lg" className="text-lg px-8 py-4">
               Liity mukaan
             </AlternativeButton>
             <AlternativeButton variant="skull" size="lg" className="text-lg px-8 py-4">
               Katso kurssit
             </AlternativeButton>
+          </div>
+
+          {/* Perustuslaki section */}
+          <div className="mt-16 p-8 border border-neon-red/30 rounded-lg bg-darker-surface/50 backdrop-blur-sm">
+            <h3 className="text-3xl md:text-4xl font-bold text-neon-red mb-6 text-center animate-glitch">
+              Perustuslaki
+            </h3>
+            <p className="text-lg md:text-xl text-muted-foreground text-center leading-relaxed max-w-4xl mx-auto">
+              Kaikki mikä edistää hyppäämistä vaarantamatta muiden turvallisuutta on hyvästä, ja kaikki muu saatanasta
+            </p>
           </div>
         </div>
       </div>
