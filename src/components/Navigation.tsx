@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { AlternativeButton } from "./AlternativeButton";
 
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const navItems = [
     "Toimintakalenteri",
     "Hinnasto", 
@@ -35,10 +37,32 @@ const Navigation = () => {
             ))}
           </div>
           
-          <AlternativeButton variant="skull" className="md:hidden">
+          <AlternativeButton 
+            variant="skull" 
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             ☰
           </AlternativeButton>
         </div>
+        
+        {/* Mobile dropdown menu */}
+        {isOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border z-50">
+            <div className="container mx-auto px-4 py-4 space-y-3">
+              {navItems.map((item, index) => (
+                <AlternativeButton 
+                  key={item} 
+                  variant="nav"
+                  className="w-full text-left justify-start hover:animate-glitch"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item}
+                </AlternativeButton>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
