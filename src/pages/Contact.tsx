@@ -71,7 +71,7 @@ const Contact = () => {
           </div>
 
           {/* Other contacts - Grid layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {contacts.map((contact) => (
               <Card 
                 key={contact.id} 
@@ -84,13 +84,13 @@ const Contact = () => {
                       {contact.name.charAt(0)}
                     </AvatarFallback>
                   </Avatar>
-                  <h3 className="text-xl font-bold text-foreground mb-1">{contact.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3 leading-tight">{contact.role}</p>
+                  <h3 className="text-3xl font-bold text-foreground mb-2">{contact.name}</h3>
+                  <p className="text-lg text-muted-foreground mb-3">{contact.role}</p>
                 </CardHeader>
                 <CardContent className="text-center pt-0">
                   <a 
                     href={`mailto:${contact.email}`} 
-                    className="text-neon-green hover:text-neon-green/80 transition-colors underline text-sm break-all leading-tight"
+                    className="text-neon-green hover:text-neon-green/80 transition-colors underline text-lg break-all"
                   >
                     {contact.email}
                   </a>
