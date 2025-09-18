@@ -1,4 +1,4 @@
-import skullPropeller from "@/assets/skull-propeller.jpg";
+import skullSkydiver0 from "@/assets/skull-propeller.jpg";
 import skullSkydiver1 from "@/assets/skull-skydiver-1.jpg";
 import skullSkydiver2 from "@/assets/skull-skydiver-2.jpg";
 import skullSkydiver3 from "@/assets/skull-skydiver-3.jpg";
@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const skullImages = [
-    skullPropeller,
+    skullSkydiver0,
     skullSkydiver1,
     skullSkydiver2,
     skullSkydiver3,
@@ -67,7 +67,7 @@ const HeroSection = () => {
           <div className="my-8 relative">
             <div className="relative inline-block animate-float">
               <img 
-                src={randomSkull || skullPropeller} 
+                src={randomSkull || skullSkydiver0} 
                 alt="Skull skydiver with propeller falling from sky"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
               />
