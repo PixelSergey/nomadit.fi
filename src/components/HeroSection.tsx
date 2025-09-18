@@ -66,12 +66,20 @@ const HeroSection = () => {
           {/* Skull image with effects */}
           <div className="my-8 relative">
             <div className="relative inline-block animate-float">
-              <img 
-                src={randomSkull || skullSkydiver0} 
-                alt="Skull skydiver with propeller falling from sky"
-                className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg" />
+              {randomSkull ? (
+                <>
+                  <img 
+                    src={randomSkull} 
+                    alt="Skull skydiver with propeller falling from sky"
+                    className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg" />
+                </>
+              ) : (
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg border-2 border-neon-green/30 bg-darker-surface/50 flex items-center justify-center animate-pulse">
+                  <div className="w-8 h-8 border-2 border-neon-green border-t-transparent rounded-full animate-spin" />
+                </div>
+              )}
             </div>
           </div>
           
