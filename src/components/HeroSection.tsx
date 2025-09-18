@@ -102,7 +102,7 @@ const HeroSection = () => {
             </h3>
             <p className="text-lg md:text-xl text-muted-foreground text-center leading-relaxed">
               Kaikki mikä edistää hyppäämistä vaarantamatta muiden turvallisuutta on hyvästä,<br />
-              ja kaikki muu saatanasta
+              ja muunlainen saatanasta
             </p>
           </div>
         </div>
