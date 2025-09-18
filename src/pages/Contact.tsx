@@ -61,10 +61,10 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="text-center pt-0">
                 <a 
-                  href="mailto:hallitus@nomadit.fi" 
+                  href="mailto:saato++@nomadit.fi" 
                   className="text-neon-green hover:text-neon-green/80 transition-colors underline text-lg"
                 >
-                  hallitus@nomadit.fi
+                  saato++@nomadit.fi
                 </a>
               </CardContent>
             </Card>
