@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 const alternativeButtonVariants = cva(
-  "relative inline-flex items-center justify-center text-sm font-medium transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 overflow-hidden group",
+  "relative inline-flex items-center justify-center text-sm font-medium transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 overflow-hidden group transform skew-x-[-10deg]",
   {
     variants: {
       variant: {
