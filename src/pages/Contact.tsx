@@ -49,20 +49,20 @@ const Contact = () => {
           </h1>
           
           {/* Hallitus - Centered at top */}
-          <div className="flex justify-center mb-16">
-            <Card className="w-full max-w-md bg-card/80 backdrop-blur-sm border-neon-green/30 hover:border-neon-green/60 transition-all duration-300">
-              <CardHeader className="text-center">
-                <Avatar className="w-32 h-32 mx-auto mb-4 border-2 border-neon-green/50">
+          <div className="flex justify-center mb-12">
+            <Card className="w-full max-w-lg bg-card/80 backdrop-blur-sm border-neon-green/30 hover:border-neon-green/60 transition-all duration-300">
+              <CardHeader className="text-center pb-4">
+                <Avatar className="w-40 h-40 mx-auto mb-6 border-4 border-neon-green/60 shadow-lg shadow-neon-green/20">
                   <AvatarImage src={hallitusImage} alt="Hallitus" className="object-cover" />
-                  <AvatarFallback className="bg-darker-surface text-neon-green text-xl">H</AvatarFallback>
+                  <AvatarFallback className="bg-darker-surface text-neon-green text-2xl">H</AvatarFallback>
                 </Avatar>
-                <h3 className="text-2xl font-bold text-foreground">Hallitus</h3>
-                <p className="text-muted-foreground">säätäminen</p>
+                <h3 className="text-3xl font-bold text-foreground mb-2">Hallitus</h3>
+                <p className="text-lg text-muted-foreground mb-3">säätäminen</p>
               </CardHeader>
-              <CardContent className="text-center">
+              <CardContent className="text-center pt-0">
                 <a 
                   href="mailto:hallitus@nomadit.fi" 
-                  className="text-neon-green hover:text-neon-green/80 transition-colors underline"
+                  className="text-neon-green hover:text-neon-green/80 transition-colors underline text-lg"
                 >
                   hallitus@nomadit.fi
                 </a>
@@ -71,26 +71,26 @@ const Contact = () => {
           </div>
 
           {/* Other contacts - Grid layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contacts.map((contact) => (
               <Card 
                 key={contact.id} 
                 className="bg-card/80 backdrop-blur-sm border-neon-green/30 hover:border-neon-green/60 transition-all duration-300 hover:scale-105"
               >
-                <CardHeader className="text-center">
-                  <Avatar className="w-24 h-24 mx-auto mb-4 border-2 border-neon-green/50">
+                <CardHeader className="text-center pb-3">
+                  <Avatar className="w-32 h-32 mx-auto mb-4 border-3 border-neon-green/60 shadow-lg shadow-neon-green/20">
                     <AvatarImage src={contact.image} alt={contact.name} className="object-cover" />
-                    <AvatarFallback className="bg-darker-surface text-neon-green">
+                    <AvatarFallback className="bg-darker-surface text-neon-green text-xl">
                       {contact.name.charAt(0)}
                     </AvatarFallback>
                   </Avatar>
-                  <h3 className="text-xl font-bold text-foreground">{contact.name}</h3>
-                  <p className="text-sm text-muted-foreground">{contact.role}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-1">{contact.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-3 leading-tight">{contact.role}</p>
                 </CardHeader>
-                <CardContent className="text-center">
+                <CardContent className="text-center pt-0">
                   <a 
                     href={`mailto:${contact.email}`} 
-                    className="text-neon-green hover:text-neon-green/80 transition-colors underline text-sm break-all"
+                    className="text-neon-green hover:text-neon-green/80 transition-colors underline text-sm break-all leading-tight"
                   >
                     {contact.email}
                   </a>
