@@ -90,9 +90,11 @@ const HeroSection = () => {
                 Laskuvarjohyppykurssit
               </AlternativeButton>
             </a>
-            <AlternativeButton variant="skull" size="lg" className="text-lg px-8 py-4">
-              Join the dark side
-            </AlternativeButton>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScFM6bSjsIiQte6dah3FwNLvJKuAaPp8oi4JXy1kZM8vPQYeA/viewform?usp=send_form">
+              <AlternativeButton variant="skull" size="lg" className="text-lg px-8 py-4">
+                Join the dark side
+              </AlternativeButton>
+            </a>
           </div>
 
           {/* Perustuslaki section */}
