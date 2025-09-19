@@ -16,8 +16,8 @@ const contacts = [
     image: lasseImage,
   },
   {
-    id: "hopo-henkka",
-    name: "Höpö-Henkka",
+    id: "henkka",
+    name: "Henkka",
     role: "Supreme Commander of High Risk Operations",
     email: "supreme-commander.of.high-risk-operations@nomadit.fi",
     image: hopoHenkkaImage,
