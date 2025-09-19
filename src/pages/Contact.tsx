@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import hallitusImage from "@/assets/contacts/hallitus.jpg";
 import lasseImage from "@/assets/contacts/lasse.jpg";
-import hopoHenkkaImage from "@/assets/contacts/hopo-henkka.jpg";
+import henkkaImage from "@/assets/contacts/henkka.jpg";
 import segeImage from "@/assets/contacts/sege.jpg";
 import pyryImage from "@/assets/contacts/pyry.jpg";
 
@@ -17,10 +17,10 @@ const contacts = [
   },
   {
     id: "henkka",
-    name: "Henkka",
+    name: "m.virtanen",
     role: "Supreme Commander of High Risk Operations",
     email: "supreme-commander.of.high-risk-operations@nomadit.fi",
-    image: hopoHenkkaImage,
+    image: henkkaImage,
   },
   {
     id: "sege",
