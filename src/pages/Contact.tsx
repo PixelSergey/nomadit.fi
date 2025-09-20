@@ -59,12 +59,18 @@ const Contact = () => {
                 <h3 className="text-3xl font-bold text-foreground mb-2">Hallitus</h3>
                 <p className="text-lg text-muted-foreground mb-3">yleiset yhteydenotot sekä säätäminen</p>
               </CardHeader>
-              <CardContent className="text-center pt-0">
+              <CardContent className="text-center pt-0 space-y-2">
                 <a 
                   href="mailto:saato++@nomadit.fi" 
-                  className="text-neon-green hover:text-neon-green/80 transition-colors underline text-lg"
+                  className="text-neon-green hover:text-neon-green/80 transition-colors underline text-lg block"
                 >
                   saato++@nomadit.fi
+                </a>
+                <a 
+                  href="tel:+358403682695" 
+                  className="text-neon-green hover:text-neon-green/80 transition-colors underline text-lg block"
+                >
+                  +358 40 368 2695
                 </a>
               </CardContent>
             </Card>
