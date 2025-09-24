@@ -77,6 +77,17 @@ const Courses = () => {
                       Ilmoittaudu
                     </AlternativeButton>
                   </div>
+
+                  {/* Kovien ylätuulien kurssi */}
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 rounded-lg bg-background/30 border border-border/30">
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground">Kovien ylätuulien kurssi</h3>
+                      <p className="text-muted-foreground">Seuraava tuulikurssi ??.??.????</p>
+                    </div>
+                    <AlternativeButton variant="hero" size="default">
+                      Ilmoittaudu
+                    </AlternativeButton>
+                  </div>
                 </div>
               </CardContent>
             </Card>
