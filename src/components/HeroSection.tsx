@@ -87,7 +87,7 @@ const HeroSection = () => {
                 <>
                   <img 
                     src={randomSkull} 
-                    alt="Skull skydiver with propeller falling from sky"
+                    alt=""
                     className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg" />
