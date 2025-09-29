@@ -96,9 +96,9 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
 
       {/* Lightbox Modal */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-[95vw] max-h-[95vh] w-fit h-fit bg-background/95 backdrop-blur-sm border-neon-green/30 p-0 [&>button]:hidden overflow-hidden">
+        <DialogContent className="inline-grid !w-auto !h-auto !max-w-[95vw] !max-h-[90svh] bg-background/95 backdrop-blur-sm border-neon-green/30 !p-0 !gap-0 [&>button]:hidden overflow-hidden sm:rounded-lg">
           {selectedImage && (
-            <div className="flex flex-col max-w-[95vw] max-h-[95vh]">
+            <div className="flex flex-col items-center w-auto h-auto max-w-[95vw] max-h-[90svh]">
               {/* Image with CRT effect constrained to image only */}
               <div className="holographic-modal-image relative shrink-0">
                 {/* Close button positioned over image */}
@@ -116,7 +116,7 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
                 <img
                   src={getImageUrl(selectedImage.image_path)}
                   alt={selectedImage.description || "Holographic projection"}
-                  className="block max-h-[70vh] sm:max-h-[80vh] max-w-[90vw] sm:max-w-[95vw] h-auto w-auto rounded-lg object-contain"
+                  className="block max-h-[65svh] sm:max-h-[80vh] max-w-[90vw] sm:max-w-[95vw] h-auto w-auto rounded-lg object-contain"
                 />
               </div>
               
