@@ -126,6 +126,12 @@ All colors MUST be HSL.
   padding: 2rem 0;
 }
 
+.holographic-scatter {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   .holographic-grid {
     grid-template-columns: 1fr;
@@ -139,8 +145,21 @@ All colors MUST be HSL.
   transition: transform 0.3s ease;
 }
 
-.holographic-projection:hover {
+.holographic-projection-absolute {
+  cursor: pointer;
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.holographic-projection:hover,
+.holographic-projection-absolute:hover {
   transform: translateY(-10px) scale(1.05);
+  z-index: 10;
+}
+
+.holographic-projection-absolute:hover {
+  transform: translateY(-10px) scale(1.05) rotate(var(--rotation, 0deg));
 }
 
 .hologram-frame {
@@ -308,6 +327,16 @@ All colors MUST be HSL.
 .hologram-description {
   margin-top: 1rem;
   text-align: center;
+}
+
+.hologram-description-absolute {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  text-align: center;
+  z-index: 2;
 }
 
 .glitch-text {
