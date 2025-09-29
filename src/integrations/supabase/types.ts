@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      courses: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          name: string
+          signup_url: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          id?: string
+          name: string
+          signup_url: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          name?: string
+          signup_url?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           description: string | null
@@ -22,6 +49,7 @@ export type Database = {
           id: string
           location: string | null
           title: string
+          updated_at: string | null
         }
         Insert: {
           description?: string | null
@@ -30,6 +58,7 @@ export type Database = {
           id?: string
           location?: string | null
           title: string
+          updated_at?: string | null
         }
         Update: {
           description?: string | null
@@ -38,6 +67,31 @@ export type Database = {
           id?: string
           location?: string | null
           title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      intro_course: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          signup_url: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          id?: string
+          signup_url: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          signup_url?: string
+          updated_at?: string
         }
         Relationships: []
       }
