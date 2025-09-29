@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 interface GalleryImage {
@@ -16,6 +16,11 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
+  // Shuffle images randomly on component mount and keep order stable
+  const shuffledImages = useMemo(() => {
+    return [...images].sort(() => Math.random() - 0.5);
+  }, [images]);
+
   const handleImageError = (imageId: string) => {
     setImageErrors(prev => new Set(prev).add(imageId));
   };
@@ -27,7 +32,7 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
   return (
     <>
       <div className="holographic-grid">
-        {images.map((image, index) => {
+        {shuffledImages.map((image, index) => {
           // Generate random animation delays and durations for each image
           const glitchDelay = Math.random() * 5;
           const scanlineDelay = Math.random() * 3;

@@ -315,7 +315,6 @@ All colors MUST be HSL.
   font-family: 'Orbitron', monospace;
   font-weight: 500;
   color: hsl(var(--neon-green));
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   animation: textGlitch 3s infinite;
 }
