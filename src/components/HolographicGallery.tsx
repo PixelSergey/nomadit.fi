@@ -72,11 +72,11 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
 
       {/* Lightbox Modal */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-neon-green/30 p-6 [&>button]:hidden">
+        <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-neon-green/30 p-0 [&>button]:hidden">
           {selectedImage && (
-            <div className="space-y-4">
+            <>
               {/* Image with CRT effect constrained to image only */}
-              <div className="holographic-modal-image relative">
+              <div className="holographic-modal-image relative w-full">
                 {/* Close button positioned over image */}
                 <button
                   onClick={() => setSelectedImage(null)}
@@ -98,13 +98,13 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
               
               {/* Description without CRT effect */}
               {selectedImage.description && (
-                <div className="text-center">
+                <div className="text-center p-6">
                   <div className="glitch-text text-lg" data-text={selectedImage.description}>
                     {selectedImage.description}
                   </div>
                 </div>
               )}
-            </div>
+            </>
           )}
         </DialogContent>
       </Dialog>
