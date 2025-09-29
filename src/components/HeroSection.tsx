@@ -1,37 +1,54 @@
-import skullSkydiver0 from "@/assets/skulls/skull-skydiver-0.jpg";
-import skullSkydiver1 from "@/assets/skulls/skull-skydiver-1.jpg";
-import skullSkydiver2 from "@/assets/skulls/skull-skydiver-2.jpg";
-import skullSkydiver3 from "@/assets/skulls/skull-skydiver-3.jpg";
-import skullSkydiver4 from "@/assets/skulls/skull-skydiver-4.jpg";
-import skullSkydiver5 from "@/assets/skulls/skull-skydiver-5.jpg";
-import skullSkydiver6 from "@/assets/skulls/skull-skydiver-6.jpg";
-import skullSkydiver7 from "@/assets/skulls/skull-skydiver-7.jpg";
-import skullSkydiver8 from "@/assets/skulls/skull-skydiver-8.jpg";
-import skullSkydiver9 from "@/assets/skulls/skull-skydiver-9.jpg";
-import skullSkydiver10 from "@/assets/skulls/skull-skydiver-10.jpg";
 import { AlternativeButton } from "./AlternativeButton";
 import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const HeroSection = () => {
-  const skullImages = [
-    skullSkydiver0,
-    skullSkydiver1,
-    skullSkydiver2,
-    skullSkydiver3,
-    skullSkydiver4,
-    skullSkydiver5,
-    skullSkydiver6,
-    skullSkydiver7,
-    skullSkydiver8,
-    skullSkydiver9,
-    skullSkydiver10,
-  ];
-
   const [randomSkull, setRandomSkull] = useState<string>("");
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * skullImages.length);
-    setRandomSkull(skullImages[randomIndex]);
+    const fetchRandomSkullImage = async () => {
+      try {
+        // List all files in the skull-images bucket
+        const { data: files, error } = await supabase.storage
+          .from('skull-images')
+          .list('', {
+            limit: 100,
+            offset: 0,
+          });
+
+        if (error || !files || files.length === 0) {
+          console.error('Error fetching skull images:', error);
+          return;
+        }
+
+        // Filter out folders and get only image files
+        const imageFiles = files.filter(file => 
+          file.name.match(/\.(jpg|jpeg|png|webp)$/i)
+        );
+
+        if (imageFiles.length === 0) {
+          console.error('No skull images found in bucket');
+          return;
+        }
+
+        // Pick a random image
+        const randomIndex = Math.floor(Math.random() * imageFiles.length);
+        const selectedFile = imageFiles[randomIndex];
+
+        // Get the public URL
+        const { data } = supabase.storage
+          .from('skull-images')
+          .getPublicUrl(selectedFile.name);
+
+        if (data?.publicUrl) {
+          setRandomSkull(data.publicUrl);
+        }
+      } catch (error) {
+        console.error('Error fetching random skull image:', error);
+      }
+    };
+
+    fetchRandomSkullImage();
   }, []);
 
   return (
