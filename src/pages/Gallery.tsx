@@ -38,7 +38,9 @@ const Gallery = () => {
   }, []);
 
   const getImageUrl = (imagePath: string) => {
-    return `https://bcwsacbqmklugvelgegt.supabase.co/storage/v1/object/public/gallery-images/${imagePath}`;
+    const timestamp = Date.now();
+    const random = Math.random().toString(36).substring(7);
+    return `https://bcwsacbqmklugvelgegt.supabase.co/storage/v1/object/public/gallery-images/${imagePath}?t=${timestamp}&r=${random}`;
   };
 
   return (
