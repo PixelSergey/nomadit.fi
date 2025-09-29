@@ -72,7 +72,7 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
 
       {/* Lightbox Modal */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-neon-green/30 p-6">
+        <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-neon-green/30 p-6 [&>button]:hidden">
           {selectedImage && (
             <div className="space-y-4">
               {/* Image with CRT effect constrained to image only */}
