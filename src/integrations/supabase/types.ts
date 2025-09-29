@@ -71,6 +71,33 @@ export type Database = {
         }
         Relationships: []
       }
+      gallery_images: {
+        Row: {
+          created_at: string
+          description: string | null
+          hidden: boolean
+          id: string
+          image_path: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          hidden?: boolean
+          id?: string
+          image_path: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          hidden?: boolean
+          id?: string
+          image_path?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       intro_course: {
         Row: {
           created_at: string
