@@ -48,11 +48,8 @@ const Gallery = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-neon-green animate-glitch mb-4">
-              Holographic Gallery
+              Galleria
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Digital projections from the void
-            </p>
           </div>
 
           {loading ? (
