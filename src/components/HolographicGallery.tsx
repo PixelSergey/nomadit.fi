@@ -76,7 +76,18 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
           {selectedImage && (
             <div className="space-y-4">
               {/* Image with CRT effect constrained to image only */}
-              <div className="holographic-modal-image">
+              <div className="holographic-modal-image relative">
+                {/* Close button positioned over image */}
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="absolute top-4 right-4 z-20 bg-background/80 border border-neon-green/50 rounded-md p-2 text-neon-green hover:bg-background hover:border-neon-green transition-all duration-200 backdrop-blur-sm"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m18 6-12 12"/>
+                    <path d="m6 6 12 12"/>
+                  </svg>
+                </button>
+                
                 <div className="modal-scanlines"></div>
                 <img
                   src={getImageUrl(selectedImage.image_path)}
