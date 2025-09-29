@@ -1,0 +1,25 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:security@nomadit.fi
+Expires: 2099-12-31T13:37:00.000Z
+Encryption: https://sergey.fi/sergey.pgp
+Preferred-Languages: en, fi
+Canonical: https://nomadit.fi/.well-known/security.txt
+Canonical: https://nomadit.fi/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEECFejrHI5SgVkecmJCWb0VMycCXsFAmjav3QACgkQCWb0VMyc
+CXtEkhAAmCsicj6aXtiID15Y4hjawBYV/wTMJvHGHWZWWAyw9XLrzk7Jx/9g0OUM
+pHOeW2Ge7ByNLk4iQ+Zy11rj7XMs8M43rtuZ2nMlDNFz8vkqPP29jRyFeDqAkPi4
+SzVRXftC+FJZBwEPPBWrvPdLLSdR+5pxilOGlXcT+MVprh7wHW83AjpP3ToGMTDU
+0nYaNYf9BalQhxSrORgP3fJZ0t1+Ny3GGpRjad60L9BlJwcmRil5CxzyhoxQovtG
+gffYstVBnTD02z3AK23XIB2IAX4ps2fWvxxXi3qxIE42+oxfTDLyQ8Kaf/bgcJrs
+L+bm2cf29ZtPKnC3iFoqytMdQJIl8p3jXUjNJcbvSX6ce6u0AA1h5t9eZY67URl+
+F1GOkOSAprNSvtzycA8Gp6yJm5kRWnugiVfOC1rfwx52+qC8mPXID7fuMnieKnO0
+Ht5IM2KTnx9tGVzRkL93X/iuoekne3HcbGXp2TtKDqbVa91+D49FnwsBN0e6NdMd
+MwhXv5jS8/QuLRz5bA9O8GdzjP9Lkv3nylrt/Pfe//K50qjrql++Nobx4zDux6kY
+LOljxOGIqk8CwfAlvSWZU1PvlhLM/NysvQIVKEEN3DkOeaBCR5f9AfFS1xGzLgVy
+ljKQUPQycRGuNlLO2ZbP8j+Na0XCOk2QrtKtFsBIaBc6p77aHiA=
+=Uwh6
+-----END PGP SIGNATURE-----
