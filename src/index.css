@@ -199,15 +199,15 @@ All colors MUST be HSL.
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, transparent 20%, hsl(var(--neon-green) / 0.15) 21%, transparent 22%),
-    radial-gradient(circle at 40% 20%, transparent 10%, hsl(var(--neon-red) / 0.1) 11%, transparent 12%),
-    radial-gradient(circle at 90% 80%, transparent 15%, hsl(var(--neon-blue) / 0.12) 16%, transparent 17%),
-    radial-gradient(circle at 60% 90%, transparent 25%, hsl(var(--neon-green) / 0.08) 26%, transparent 27%);
+    radial-gradient(circle at 20% 50%, transparent 20%, hsl(var(--neon-green) / 0.25) 21%, transparent 22%),
+    radial-gradient(circle at 40% 20%, transparent 10%, hsl(var(--neon-red) / 0.2) 11%, transparent 12%),
+    radial-gradient(circle at 90% 80%, transparent 15%, hsl(var(--neon-blue) / 0.22) 16%, transparent 17%),
+    radial-gradient(circle at 60% 90%, transparent 25%, hsl(var(--neon-green) / 0.18) 26%, transparent 27%);
   pointer-events: none;
   z-index: 3;
-  animation: staticNoise 0.1s infinite;
+  animation: staticNoise 0.08s infinite;
   animation-delay: var(--glitch-delay, 0s);
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .hologram-distortion {
@@ -218,8 +218,15 @@ All colors MUST be HSL.
   bottom: 0;
   pointer-events: none;
   z-index: 4;
-  animation: imageDistortion 4s ease-in-out infinite;
+  animation: imageDistortion 3s ease-in-out infinite;
   animation-delay: var(--distortion-delay, 0s);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--neon-green) / 0.1) 50%,
+    transparent 100%
+  );
+  opacity: 0.3;
   mix-blend-mode: overlay;
 }
 
@@ -251,12 +258,13 @@ All colors MUST be HSL.
 }
 
 .holographic-projection:hover .hologram-static {
-  opacity: 0.3;
-  animation-duration: 0.05s;
+  opacity: 0.8;
+  animation-duration: 0.04s;
 }
 
 .holographic-projection:hover .hologram-distortion {
-  animation-duration: 1s;
+  animation-duration: 1.5s;
+  opacity: 0.5;
 }
 
 .holographic-projection:hover .hologram-flicker {
