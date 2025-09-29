@@ -96,11 +96,11 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
 
       {/* Lightbox Modal */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-none w-fit h-fit bg-background/95 backdrop-blur-sm border-neon-green/30 p-0 [&>button]:hidden">
+        <DialogContent className="max-w-[95vw] max-h-[95vh] w-fit h-fit bg-background/95 backdrop-blur-sm border-neon-green/30 p-0 [&>button]:hidden overflow-hidden">
           {selectedImage && (
-            <div className="flex flex-col">
+            <div className="flex flex-col max-w-[95vw] max-h-[95vh]">
               {/* Image with CRT effect constrained to image only */}
-              <div className="holographic-modal-image relative">
+              <div className="holographic-modal-image relative shrink-0">
                 {/* Close button positioned over image */}
                 <button
                   onClick={() => setSelectedImage(null)}
@@ -116,14 +116,14 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
                 <img
                   src={getImageUrl(selectedImage.image_path)}
                   alt={selectedImage.description || "Holographic projection"}
-                  className="block max-h-[85vh] max-w-[95vw] h-auto w-auto rounded-lg"
+                  className="block max-h-[70vh] sm:max-h-[80vh] max-w-[90vw] sm:max-w-[95vw] h-auto w-auto rounded-lg object-contain"
                 />
               </div>
               
               {/* Description without CRT effect */}
               {selectedImage.description && (
-                <div className="text-center p-6 w-full">
-                  <div className="glitch-text text-lg" data-text={selectedImage.description}>
+                <div className="text-center p-4 sm:p-6 w-full shrink-0">
+                  <div className="glitch-text text-base sm:text-lg" data-text={selectedImage.description}>
                     {selectedImage.description}
                   </div>
                 </div>
