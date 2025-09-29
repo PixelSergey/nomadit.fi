@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X } from "lucide-react";
 
 interface GalleryImage {
   id: string;
@@ -73,34 +72,29 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
 
       {/* Lightbox Modal */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-neon-green/30">
-          <div className="relative">
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-10 right-0 text-muted-foreground hover:text-neon-green transition-colors z-10"
-            >
-              <X size={24} />
-            </button>
-            
-            {selectedImage && (
-              <div className="holographic-modal">
+        <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-neon-green/30 p-6">
+          {selectedImage && (
+            <div className="space-y-4">
+              {/* Image with CRT effect constrained to image only */}
+              <div className="holographic-modal-image">
                 <div className="modal-scanlines"></div>
                 <img
                   src={getImageUrl(selectedImage.image_path)}
                   alt={selectedImage.description || "Holographic projection"}
-                  className="w-full h-auto max-h-[70vh] object-contain"
+                  className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
                 />
-                
-                {selectedImage.description && (
-                  <div className="mt-4 text-center">
-                    <div className="glitch-text text-lg" data-text={selectedImage.description}>
-                      {selectedImage.description}
-                    </div>
-                  </div>
-                )}
               </div>
-            )}
-          </div>
+              
+              {/* Description without CRT effect */}
+              {selectedImage.description && (
+                <div className="text-center">
+                  <div className="glitch-text text-lg" data-text={selectedImage.description}>
+                    {selectedImage.description}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </DialogContent>
       </Dialog>
 
