@@ -34,6 +34,7 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
           const distortionDelay = Math.random() * 4;
           const flickerDelay = Math.random() * 6;
           const floatDuration = 4 + Math.random() * 4; // 4-8 seconds
+          const rotation = (Math.random() - 0.5) * 10; // -5 to +5 degrees
           
           return (
             <div
@@ -42,6 +43,7 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationDuration: `${floatDuration}s`,
+                transform: `rotate(${rotation}deg)`,
                 '--glitch-delay': `${glitchDelay}s`,
                 '--scanline-delay': `${scanlineDelay}s`,
                 '--distortion-delay': `${distortionDelay}s`,
