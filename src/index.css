@@ -137,10 +137,11 @@ All colors MUST be HSL.
   cursor: pointer;
   animation: float 6s ease-in-out infinite;
   transition: transform 0.3s ease;
+  transform: rotate(var(--rotation, 0deg));
 }
 
 .holographic-projection:hover {
-  transform: translateY(-10px) scale(1.05);
+  transform: translateY(-10px) scale(1.05) rotate(var(--rotation, 0deg));
 }
 
 .hologram-frame {

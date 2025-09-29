@@ -48,7 +48,7 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationDuration: `${floatDuration}s`,
-                transform: `rotate(${rotation}deg)`,
+                '--rotation': `${rotation}deg`,
                 '--glitch-delay': `${glitchDelay}s`,
                 '--scanline-delay': `${scanlineDelay}s`,
                 '--distortion-delay': `${distortionDelay}s`,

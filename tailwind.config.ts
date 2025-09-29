@@ -116,10 +116,10 @@ export default {
         },
         "float": {
           "0%, 100%": {
-            transform: "translateY(0px)",
+            transform: "translateY(0px) rotate(var(--rotation, 0deg))",
           },
           "50%": {
-            transform: "translateY(-10px)",
+            transform: "translateY(-10px) rotate(var(--rotation, 0deg))",
           },
         },
       },
