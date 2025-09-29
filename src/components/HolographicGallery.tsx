@@ -27,47 +27,62 @@ const HolographicGallery = ({ images, getImageUrl }: HolographicGalleryProps) =>
   return (
     <>
       <div className="holographic-grid">
-        {images.map((image, index) => (
-          <div
-            key={image.id}
-            className="holographic-projection"
-            style={{
-              animationDelay: `${index * 0.2}s`
-            }}
-            onClick={() => handleImageClick(image)}
-          >
-            <div className="hologram-frame">
-              <div className="hologram-scanlines"></div>
-              <div className="hologram-grid"></div>
+        {images.map((image, index) => {
+          // Generate random animation delays for each image
+          const glitchDelay = Math.random() * 5;
+          const scanlineDelay = Math.random() * 3;
+          const distortionDelay = Math.random() * 4;
+          const flickerDelay = Math.random() * 6;
+          
+          return (
+            <div
+              key={image.id}
+              className="holographic-projection"
+              style={{
+                animationDelay: `${index * 0.2}s`,
+                '--glitch-delay': `${glitchDelay}s`,
+                '--scanline-delay': `${scanlineDelay}s`,
+                '--distortion-delay': `${distortionDelay}s`,
+                '--flicker-delay': `${flickerDelay}s`
+              } as React.CSSProperties & { [key: string]: string }}
+              onClick={() => handleImageClick(image)}
+            >
+              <div className="hologram-frame">
+                <div className="hologram-scanlines"></div>
+                <div className="hologram-grid"></div>
+                <div className="hologram-static"></div>
+                <div className="hologram-distortion"></div>
+                
+                {imageErrors.has(image.id) ? (
+                  <div className="hologram-error">
+                    <div className="text-destructive animate-glitch">
+                      SIGNAL LOST
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={getImageUrl(image.image_path)}
+                    alt={image.description || "Holographic projection"}
+                    className="hologram-image"
+                    onError={() => handleImageError(image.id)}
+                    loading="lazy"
+                  />
+                )}
+                
+                <div className="hologram-glow"></div>
+                <div className="hologram-flicker"></div>
+              </div>
               
-              {imageErrors.has(image.id) ? (
-                <div className="hologram-error">
-                  <div className="text-destructive animate-glitch">
-                    SIGNAL LOST
+              {image.description && (
+                <div className="hologram-description">
+                  <div className="glitch-text" data-text={image.description}>
+                    {image.description}
                   </div>
                 </div>
-              ) : (
-                <img
-                  src={getImageUrl(image.image_path)}
-                  alt={image.description || "Holographic projection"}
-                  className="hologram-image"
-                  onError={() => handleImageError(image.id)}
-                  loading="lazy"
-                />
               )}
-              
-              <div className="hologram-glow"></div>
             </div>
-            
-            {image.description && (
-              <div className="hologram-description">
-                <div className="glitch-text" data-text={image.description}>
-                  {image.description}
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Lightbox Modal */}
