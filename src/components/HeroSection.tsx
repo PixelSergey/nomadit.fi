@@ -121,7 +121,7 @@ const HeroSection = () => {
             </h3>
             <p className="text-lg md:text-xl text-muted-foreground text-center leading-relaxed">
               Kaikki mikä edistää hyppäämistä vaarantamatta muiden turvallisuutta on hyvästä,<br />
-              ja muunlainen saatanasta
+              ja muunlainen <span className="text-[hsl(0,85%,45%)] animate-shake">saatanasta</span>
             </p>
           </div>
         </div>

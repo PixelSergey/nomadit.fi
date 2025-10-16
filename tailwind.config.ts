@@ -122,6 +122,17 @@ export default {
             transform: "translateY(-10px) rotate(var(--rotation, 0deg))",
           },
         },
+        "shake": {
+          "0%, 100%": {
+            transform: "translateX(0)",
+          },
+          "25%": {
+            transform: "translateX(-1px)",
+          },
+          "75%": {
+            transform: "translateX(1px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -129,6 +140,7 @@ export default {
         "glitch": "glitch 2s infinite",
         "neon-pulse": "neon-pulse 2s ease-in-out infinite alternate",
         "float": "float 3s ease-in-out infinite",
+        "shake": "shake 0.5s ease-in-out infinite",
       },
     },
   },
