@@ -127,31 +127,31 @@ export default {
             transform: "translate(0)",
           },
           "10%": {
-            transform: "translate(-0.5px, 0.5px)",
+            transform: "translate(-1px, 1px)",
           },
           "20%": {
-            transform: "translate(-0.5px, -0.5px)",
+            transform: "translate(-1px, -1px)",
           },
           "30%": {
-            transform: "translate(0.5px, 0.5px)",
+            transform: "translate(1px, 1px)",
           },
           "40%": {
-            transform: "translate(0.5px, -0.5px)",
+            transform: "translate(1px, -1px)",
           },
           "50%": {
-            transform: "translate(-0.5px, 0.5px)",
+            transform: "translate(-1px, 1px)",
           },
           "60%": {
-            transform: "translate(-0.5px, -0.5px)",
+            transform: "translate(-1px, -1px)",
           },
           "70%": {
-            transform: "translate(0.5px, 0.5px)",
+            transform: "translate(1px, 1px)",
           },
           "80%": {
-            transform: "translate(0.5px, -0.5px)",
+            transform: "translate(1px, -1px)",
           },
           "90%": {
-            transform: "translate(-0.5px, 0)",
+            transform: "translate(-1px, 0)",
           },
         },
       },
@@ -161,7 +161,7 @@ export default {
         "glitch": "glitch 2s infinite",
         "neon-pulse": "neon-pulse 2s ease-in-out infinite alternate",
         "float": "float 3s ease-in-out infinite",
-        "shake": "shake 0.3s ease-in-out infinite",
+        "shake": "shake 0.2s linear infinite",
       },
     },
   },
