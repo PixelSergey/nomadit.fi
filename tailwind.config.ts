@@ -161,7 +161,7 @@ export default {
         "glitch": "glitch 2s infinite",
         "neon-pulse": "neon-pulse 2s ease-in-out infinite alternate",
         "float": "float 3s ease-in-out infinite",
-        "shake": "shake 0.2s linear infinite",
+        "shake": "shake 0.3s linear infinite",
       },
     },
   },
