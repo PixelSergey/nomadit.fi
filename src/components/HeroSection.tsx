@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const HeroSection = () => {
   const [randomSkull, setRandomSkull] = useState<string>("");
+  const [allSkullFiles, setAllSkullFiles] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchRandomSkullImage = async () => {
@@ -31,6 +32,10 @@ const HeroSection = () => {
           return;
         }
 
+        // Store all file names
+        const fileNames = imageFiles.map(file => file.name);
+        setAllSkullFiles(fileNames);
+
         // Pick a random image
         const randomIndex = Math.floor(Math.random() * imageFiles.length);
         const selectedFile = imageFiles[randomIndex];
@@ -50,6 +55,34 @@ const HeroSection = () => {
 
     fetchRandomSkullImage();
   }, []);
+
+  const handleSkullClick = () => {
+    if (allSkullFiles.length === 0) return;
+
+    // Get current filename from URL
+    const currentFileName = randomSkull.split('/').pop();
+    
+    // Filter out current image to ensure we get a different one
+    const availableFiles = allSkullFiles.filter(name => name !== currentFileName);
+    
+    if (availableFiles.length === 0) {
+      // If only one image exists, just reload it
+      return;
+    }
+
+    // Pick a random different image
+    const randomIndex = Math.floor(Math.random() * availableFiles.length);
+    const selectedFile = availableFiles[randomIndex];
+
+    // Get the public URL
+    const { data } = supabase.storage
+      .from('skull-images')
+      .getPublicUrl(selectedFile);
+
+    if (data?.publicUrl) {
+      setRandomSkull(data.publicUrl);
+    }
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-darker-surface to-background pt-20 pb-20">
@@ -88,9 +121,10 @@ const HeroSection = () => {
                   <img 
                     src={randomSkull} 
                     alt=""
-                    className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105"
+                    onClick={handleSkullClick}
+                    className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border-2 border-neon-green shadow-2xl hover:animate-neon-pulse transition-all duration-300 hover:scale-105 cursor-pointer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neon-green/20 to-transparent rounded-lg pointer-events-none" />
                 </>
               ) : (
                 <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg border-2 border-neon-green/30 bg-darker-surface/50 flex items-center justify-center animate-pulse">
