@@ -77,7 +77,7 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <h2 className="text-xl md:text-2xl text-muted-foreground font-medium tracking-wide">
-            Se parempi hyppykerho
+            Se erilainen hyppykerho
           </h2>
           
           {/* Skull image with effects */}
