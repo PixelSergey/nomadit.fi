@@ -49,6 +49,7 @@ export type Database = {
           id: string
           is_past: boolean
           location: string | null
+          sort_datetime: string
           title: string
           updated_at: string | null
         }
@@ -59,6 +60,7 @@ export type Database = {
           id?: string
           is_past?: boolean
           location?: string | null
+          sort_datetime?: string
           title: string
           updated_at?: string | null
         }
@@ -69,6 +71,7 @@ export type Database = {
           id?: string
           is_past?: boolean
           location?: string | null
+          sort_datetime?: string
           title?: string
           updated_at?: string | null
         }

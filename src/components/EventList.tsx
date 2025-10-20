@@ -33,7 +33,7 @@ const EventList = () => {
       const { data, error } = await supabase
         .from('events')
         .select('*')
-        .order('event_date', { ascending: true });
+        .order('sort_datetime', { ascending: false });
 
       if (error) throw error;
       setEvents(data || []);
