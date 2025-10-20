@@ -141,6 +141,11 @@ const HeroSection = () => {
                 Laskuvarjohyppykurssit
               </AlternativeButton>
             </a>
+            <a href="/calendar">
+              <AlternativeButton variant="hero" size="lg" className="text-lg px-8 py-4">
+                Toimintaa
+              </AlternativeButton>
+            </a>
             <a href="https://forms.gle/BH8dFZUiEfZG5cvbA">
               <AlternativeButton variant="skull" size="lg" className="text-lg px-8 py-4">
                 Join the dark side
