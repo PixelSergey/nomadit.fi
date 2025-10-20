@@ -20,6 +20,7 @@ export type Database = {
           date: string
           id: string
           name: string
+          order: number
           signup_url: string
           updated_at: string
         }
@@ -28,6 +29,7 @@ export type Database = {
           date: string
           id?: string
           name: string
+          order?: number
           signup_url: string
           updated_at?: string
         }
@@ -36,6 +38,7 @@ export type Database = {
           date?: string
           id?: string
           name?: string
+          order?: number
           signup_url?: string
           updated_at?: string
         }

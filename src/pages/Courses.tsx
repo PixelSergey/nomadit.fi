@@ -11,6 +11,7 @@ interface Course {
   name: string;
   date: string;
   signup_url: string;
+  order: number;
 }
 
 interface IntroCourse {
@@ -31,7 +32,7 @@ const Courses = () => {
         const { data: coursesData, error: coursesError } = await supabase
           .from('courses')
           .select('*')
-          .order('created_at', { ascending: true });
+          .order('order', { ascending: true });
 
         if (coursesError) throw coursesError;
 
@@ -140,6 +141,7 @@ const Courses = () => {
                 <AlternativeButton 
                   variant="hero" 
                   size="lg"
+                  disabled={!introCourse?.signup_url || introCourse.signup_url === '#'}
                   onClick={() => {
                     if (introCourse?.signup_url && introCourse.signup_url !== '#') {
                       window.open(introCourse.signup_url, '_blank');
@@ -169,6 +171,7 @@ const Courses = () => {
                       <AlternativeButton 
                         variant="hero" 
                         size="default"
+                        disabled={!course.signup_url || course.signup_url === '#'}
                         onClick={() => {
                           if (course.signup_url && course.signup_url !== '#') {
                             window.open(course.signup_url, '_blank');
