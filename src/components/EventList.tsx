@@ -101,9 +101,11 @@ const EventList = () => {
             )}
           </div>
           
-          <AlternativeButton variant="hero" size="default">
-            Ilmoittaudu
-          </AlternativeButton>
+          {!event.is_past && (
+            <AlternativeButton variant="hero" size="default">
+              Ilmoittaudu
+            </AlternativeButton>
+          )}
         </div>
       </CardContent>
     </Card>
