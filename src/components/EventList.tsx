@@ -74,7 +74,7 @@ const EventList = () => {
       </CardHeader>
       <CardContent className="space-y-6">
         {event.description && (
-          <p className="text-lg text-muted-foreground text-center">
+          <p className="text-lg text-muted-foreground text-center break-words overflow-wrap-anywhere">
             {event.description}
           </p>
         )}
