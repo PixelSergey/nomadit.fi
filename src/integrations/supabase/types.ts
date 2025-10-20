@@ -47,6 +47,7 @@ export type Database = {
           event_date: string
           event_time: string | null
           id: string
+          is_past: boolean
           location: string | null
           title: string
           updated_at: string | null
@@ -56,6 +57,7 @@ export type Database = {
           event_date: string
           event_time?: string | null
           id?: string
+          is_past?: boolean
           location?: string | null
           title: string
           updated_at?: string | null
@@ -65,6 +67,7 @@ export type Database = {
           event_date?: string
           event_time?: string | null
           id?: string
+          is_past?: boolean
           location?: string | null
           title?: string
           updated_at?: string | null
