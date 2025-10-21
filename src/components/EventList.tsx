@@ -17,6 +17,7 @@ interface Event {
   event_time: string | null;
   location: string | null;
   is_past: boolean;
+  signup_url: string | null;
 }
 
 const EventList = () => {
@@ -101,8 +102,12 @@ const EventList = () => {
             )}
           </div>
           
-          {!event.is_past && (
-            <AlternativeButton variant="hero" size="default">
+          {!event.is_past && event.signup_url && event.signup_url !== '#' && (
+            <AlternativeButton 
+              variant="hero" 
+              size="default"
+              onClick={() => window.open(event.signup_url!, '_blank')}
+            >
               Ilmoittaudu
             </AlternativeButton>
           )}
