@@ -32,7 +32,7 @@ const contacts = [
   {
     id: "pyry",
     name: "Pyry",
-    role: "hätätilanne- ja vesilento-operaatioasiantuntija",
+    role: "hätätilannevastaava",
     email: "hatatilannevastaava@nomadit.fi",
     image: pyryImage,
   },
