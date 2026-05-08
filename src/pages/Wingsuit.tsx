@@ -12,12 +12,12 @@ const RequirementsTable = ({ title, rows }: RequirementsTableProps) => (
       {rows.map((r, i) => (
         <div
           key={r.label}
-          className={`flex flex-col sm:flex-row sm:justify-between sm:items-center ${
+          className={`flex flex-row flex-wrap justify-between items-center gap-x-4 ${
             i < rows.length - 1 ? "border-b border-border/50 pb-2" : ""
           }`}
         >
           <span className="text-foreground font-bold">{r.label}</span>
-          <span className="text-muted-foreground font-semibold text-right sm:text-left">{r.value}</span>
+          <span className="text-muted-foreground font-semibold">{r.value}</span>
         </div>
       ))}
     </div>
