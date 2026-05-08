@@ -8,7 +8,8 @@ const Navigation = () => {
     { name: "Hinnasto", path: "/money" }, 
     { name: "Yhteystiedot", path: "/contact" },
     { name: "Kurssit", path: "/courses" },
-    { name: "Galleria", path: "/gallery" }
+    { name: "Galleria", path: "/gallery" },
+    { name: "Wingsuit", path: "/wingsuit" }
   ];
 
   return (
