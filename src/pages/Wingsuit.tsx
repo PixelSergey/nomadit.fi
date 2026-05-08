@@ -1,6 +1,4 @@
 import Navigation from "@/components/Navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 interface RequirementsTableProps {
   title: string;
@@ -8,24 +6,21 @@ interface RequirementsTableProps {
 }
 
 const RequirementsTable = ({ title, rows }: RequirementsTableProps) => (
-  <div className="space-y-2">
-    <h4 className="text-lg font-semibold text-neon-green">{title}</h4>
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Vaatimus</TableHead>
-          <TableHead>Arvo</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {rows.map((r) => (
-          <TableRow key={r.label}>
-            <TableCell className="font-medium">{r.label}</TableCell>
-            <TableCell>{r.value}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+  <div>
+    <h4 className="text-2xl font-bold text-primary mb-4 text-center">{title}</h4>
+    <div className="space-y-4 text-xl">
+      {rows.map((r, i) => (
+        <div
+          key={r.label}
+          className={`flex flex-col sm:flex-row sm:justify-between sm:items-center ${
+            i < rows.length - 1 ? "border-b border-border/50 pb-2" : ""
+          }`}
+        >
+          <span className="text-foreground font-bold">{r.label}</span>
+          <span className="text-muted-foreground font-semibold text-right sm:text-left">{r.value}</span>
+        </div>
+      ))}
+    </div>
   </div>
 );
 
@@ -35,20 +30,17 @@ interface WingsuitModelProps {
 }
 
 const WingsuitModel = ({ name, tables }: WingsuitModelProps) => (
-  <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-    <CardHeader>
-      <CardTitle className="text-2xl font-bold text-foreground">{name}</CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-6">
-      <div className="aspect-video w-full rounded-lg bg-background/40 border border-dashed border-border/60 flex items-center justify-center text-muted-foreground">
-        Kuva tulossa
-      </div>
-      {tables.map((t) => (
-        <RequirementsTable key={t.title} {...t} />
-      ))}
-    </CardContent>
-  </Card>
+  <section className="bg-card/50 backdrop-blur-sm rounded-lg p-8 border border-border space-y-8">
+    <h3 className="text-3xl font-bold text-primary text-center">{name}</h3>
+    <div className="mx-auto w-[70%] aspect-video rounded-lg bg-background/40 border border-dashed border-border/60 flex items-center justify-center text-muted-foreground">
+      Kuva tulossa
+    </div>
+    {tables.map((t) => (
+      <RequirementsTable key={t.title} {...t} />
+    ))}
+  </section>
 );
+
 
 const Wingsuit = () => {
   const models: WingsuitModelProps[] = [
@@ -133,22 +125,20 @@ const Wingsuit = () => {
 
             <section className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-neon-green text-center">Kouluttajat</h2>
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-                <CardContent className="pt-6 space-y-6">
-                  <p className="text-muted-foreground">
-                    Liitopukuvalmistajana FSN kouluttaa ja hyväksyy liitopukukouluttajia. Kouluttajilla on oikeus kouluttaa FSN-liitopukujen käyttöä sekä kouluttaa FSN-liitopuvuilla tehtyjä First Flight -kursseja. FSN WS-kouluttaja myöntää oppilailleen koulutustodistuksen onnistuneen teoria- sekä käytännön koulutuksen ja taidonnäyttöjen jälkeen.
+              <section className="bg-card/50 backdrop-blur-sm rounded-lg p-8 border border-border space-y-6">
+                <p className="text-muted-foreground text-lg">
+                  Liitopukuvalmistajana FSN kouluttaa ja hyväksyy liitopukukouluttajia. Kouluttajilla on oikeus kouluttaa FSN-liitopukujen käyttöä sekä kouluttaa FSN-liitopuvuilla tehtyjä First Flight -kursseja. FSN WS-kouluttaja myöntää oppilailleen koulutustodistuksen onnistuneen teoria- sekä käytännön koulutuksen ja taidonnäyttöjen jälkeen.
+                </p>
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold text-primary">Ota yhteys kouluttajiin</h3>
+                  <p className="text-muted-foreground text-lg">
+                    Jos haluat ottaa yhteyttä FSN WS-kouluttajiin, lähetä sähköposti osoitteeseen{" "}
+                    <a href="mailto:wingsuit@nomadit.fi" className="text-neon-green hover:text-neon-green/80 underline transition-colors">
+                      wingsuit@nomadit.fi
+                    </a>
                   </p>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-foreground">Ota yhteys kouluttajiin</h3>
-                    <p className="text-muted-foreground">
-                      Jos haluat ottaa yhteyttä FSN WS-kouluttajiin, lähetä sähköposti osoitteeseen{" "}
-                      <a href="mailto:wingsuit@nomadit.fi" className="text-neon-green hover:text-neon-green/80 underline transition-colors">
-                        wingsuit@nomadit.fi
-                      </a>
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+              </section>
             </section>
           </div>
         </div>
