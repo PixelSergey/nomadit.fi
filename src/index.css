@@ -122,7 +122,7 @@ All colors MUST be HSL.
      elements inside buttons/navigation keep their own typography. */
   p,
   li,
-  span:not(.glitch-text):not(.animate-glitch),
+  span:not(.glitch-text):not(.animate-glitch):not(.animate-shake),
   a:not(.animate-glitch),
   td,
   th,
