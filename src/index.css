@@ -116,6 +116,35 @@ All colors MUST be HSL.
   h1, h2, h3, h4, h5, h6 {
     @apply font-orbitron;
   }
+
+  /* Centralized body-text styling: uniform font, size, and color across the app.
+     Headings keep their Orbitron styling above. The `.glitch-text` class and
+     elements inside buttons/navigation keep their own typography. */
+  p,
+  li,
+  span:not(.glitch-text),
+  a,
+  td,
+  th,
+  label,
+  blockquote,
+  figcaption,
+  dd,
+  dt {
+    font-family: 'Rajdhani', sans-serif !important;
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+    color: hsl(0 0% 100%) !important;
+  }
+
+  /* Keep button/nav text controlled by their own component styles */
+  button p,
+  button span,
+  a.button span,
+  nav span {
+    font-size: inherit !important;
+    color: inherit !important;
+  }
 }
 
 /* Holographic Gallery Styles */
