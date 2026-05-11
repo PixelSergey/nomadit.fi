@@ -1,0 +1,2 @@
+CREATE POLICY "Public read skull-images" ON storage.objects FOR SELECT USING (bucket_id = 'skull-images');
+CREATE POLICY "Public read gallery-images" ON storage.objects FOR SELECT USING (bucket_id = 'gallery-images');
